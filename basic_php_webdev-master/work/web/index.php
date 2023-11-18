@@ -2,7 +2,11 @@
 
 require('../app/functions.php');
 
-$name ='Taro <script>alert(1)</script>';
+$names = [
+  'Taro',
+  'Jiro',
+  'Sabro',
+]
 
 ?>
 <!DOCTYPE html>
@@ -12,6 +16,13 @@ $name ='Taro <script>alert(1)</script>';
   <title>PHP Practice</title>
 </head>
 <body>
-<p>Hello, <?= h($name) ?></p>
-</body>
+  <ul>
+    <?php if (empty($names)): ?>
+      <li>Nobody!</li>
+    <?php else: ?>
+      <?php foreach ($names as $name): ?>
+        <li><?= h($name); ?></li>
+      <?php endforeach; ?>
+    <?php endif; ?>
+    </body>
 </html>
