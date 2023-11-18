@@ -1,6 +1,8 @@
 <?php
 
-$today = date('Y-m-d H:i:s l');
+require('../app/functions.php');
+
+$name ='Taro <script>alert(1)</script>';
 
 ?>
 <!DOCTYPE html>
@@ -10,7 +12,6 @@ $today = date('Y-m-d H:i:s l');
   <title>PHP Practice</title>
 </head>
 <body>
-  <p>Hello, PHP!</p>
-  <p>Today: <?= $today; ?></p>
+<p>Hello, <?= h($name) ?></p>
 </body>
 </html>
