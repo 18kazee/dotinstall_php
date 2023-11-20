@@ -3,7 +3,7 @@
 require('../app/functions.php');
 
 $colorFromGet = filter_input(INPUT_GET, 'color') ?? 'transparent';
-setcookie('color', $colorFromGet); //setcookieの前にechoなどの出力があるとエラーになる
+$_SESSION['color'] = $colorFromGet;
 
 include('../app/_parts/_header.php');
 
